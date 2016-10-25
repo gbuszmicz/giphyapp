@@ -7,5 +7,5 @@ A mobile application built in React-native for Giphy.com
 Tested only with **Android** so far
 
 <p align="center">
-  <img src="https://giant.gfycat.com/FrailPalatableGander.gif" />
+  <img src="./media/FrailPalatableGander.gif" />
 </p>
