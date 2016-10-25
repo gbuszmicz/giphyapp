@@ -1,2 +1,2 @@
-# giphyapp
-A react-native mobile app for Giphy.com
+# GiphyApp
+A mobile application built in React-native for Giphy.com
