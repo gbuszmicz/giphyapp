@@ -1,11 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { 
   StyleSheet, 
-  ListView, 
-  InteractionManager
+  ListView
 } from 'react-native';
 import ListResultItem from './ListResultItem';
-import InfiniteScrollView from 'react-native-infinite-scroll-view';
 
 export default class ListResults extends Component {
 
@@ -38,17 +36,16 @@ export default class ListResults extends Component {
     )
   }
 
-  _loadMoreAsync() {
-    console.log("outside InteractionManager")
-    InteractionManager.runAfterInteractions(() => {
-      console.log("is loading moooore...")
-    });
-  }
+  // _loadMoreAsync() { // For pagination. Not used
+  //   console.log("outside InteractionManager")
+  //   InteractionManager.runAfterInteractions(() => {
+  //     console.log("is loading moooore...")
+  //   });
+  // }
 
   render() {
     return (
       <ListView
-        renderScrollComponent={props => <InfiniteScrollView {...props} />}
         contentContainerStyle={styles.content}
         dataSource={this.state.dataSource}
         renderRow={this._renderCell}
@@ -56,16 +53,14 @@ export default class ListResults extends Component {
         enableEmptySections
         initialListSize={15}
         pageSize={3}
-        canLoadMore={this.state.canLoadMore}
-        onLoadMoreAsync={() => this._loadMoreAsync()}
       />
     )
   }
 }
 
-// ListResult.propTypes = {
-//   entries: PropTypes.object,
-// }
+ListResults.propTypes = {
+  entries: React.PropTypes.array
+}
 
 const styles = StyleSheet.create({
   content: {
