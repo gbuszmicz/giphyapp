@@ -9,7 +9,7 @@ import {
 import AppStyleSheet from "../styles";
 import Icon from 'react-native-vector-icons/Foundation';
 
-export default class SearchBox extends Component {
+export default class Button extends Component {
   constructor(props) {
     super(props);
 
